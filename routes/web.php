@@ -24,3 +24,8 @@ Route::get('/donnee', function() {
     $variable = 'ma variable';
     return("Renvoie d'une donnée via une variable = ".$variable);
 });
+
+// Renvoyer une view avec une route
+Route::get('/hello', function(){
+    return view('hello');
+});
