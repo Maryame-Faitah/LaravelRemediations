@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// blade principale = welcome vu qu'il fallait inventer une route et
+// je savais pas quoi faire d'autre
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Renvoyer une donnée via une variable
+Route::get('/donnee', function() {
+    $variable = 'ma variable';
+    return("Renvoie d'une donnée via une variable = ".$variable);
 });
