@@ -20,12 +20,32 @@ Route::get('/', function () {
 });
 
 // Renvoyer une donnée via une variable
-Route::get('/donnee', function() {
-    $variable = 'ma variable';
-    return("Renvoie d'une donnée via une variable = ".$variable);
+Route::get('/test1', function() {
+    $variable1 = 'ma variable';
+    return("Renvoie d'une donnée via une variable = ".$variable1);
 });
 
 // Renvoyer une view avec une route
-Route::get('/hello', function(){
+Route::get('/test2', function(){
     return view('hello');
+});
+
+// Passer variables d'une route à un fichier web (sans controller)
+Route::get('/test3', function(){
+    $variable2 = 'une seconde variable';
+    $variable3 = 'une troisième variable';
+    $variable4 = 'une quatrième variable';
+    return view('test3', ['variable2'=>'une seconde variable',
+    'variable3'=>'une troisième variable','variable4'=>'une quatrième variable']);
+}); 
+
+// Créer plusieurs routes avec view différentes
+Route::get('/view1', function(){
+    return view('view1');
+});
+Route::get('/view2', function(){
+    return view('view2');
+});
+Route::get('/view3', function(){
+    return view('view3');
 });
